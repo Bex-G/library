@@ -10,13 +10,13 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-}
+};
 
 function addToLibrary() {
     let newBook = new Book(bookForm.title.value, bookForm.author.value, bookForm.pages.value, bookForm.read.value);
     myLibrary.push(newBook);
     addToTable();
-}
+};
 
 //display any existing myLibrary entries
 
@@ -39,23 +39,33 @@ let newText2 = document.createTextNode(myLibrary[i].author);
 let newText3 = document.createTextNode(myLibrary[i].pages);
     newCell3.appendChild(newText3);
 
-let newText4 = document.createTextNode(myLibrary[i].read);
-    newCell4.appendChild(newText4);
-}
+    const readButton = document.createElement('button');
+    readButton.setAttribute('id','para-1');
+    readButton.innerText = myLibrary[i].read;
+
+    readButton.addEventListener('click', (e) => {
+        if (readButton.innerText === "yes") {
+            readButton.innerText = "no";
+        } else if (readButton.innerText === "no") {
+            readButton.innerText = "yes";
+        }
+    })
+    newCell4.appendChild(readButton);
+};
 
 // manage form visibility and actions
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-}
+};
 
 function closeForm() {
-document.getElementById("myForm").style.display = "none";
-}
+    document.getElementById("myForm").style.display = "none";
+};
 
 function clearForm() {
     document.getElementById("form-container").reset();
-}
+};
 
 document.getElementById('new-book').addEventListener('click', (e) => {
     openForm();
@@ -92,6 +102,16 @@ function addToTable() {
     let newText3 = document.createTextNode(myLibrary[i].pages);
         newCell3.appendChild(newText3);
 
-    let newText4 = document.createTextNode(myLibrary[i].read);
-        newCell4.appendChild(newText4);
-}
+    const readButton = document.createElement('button');
+    readButton.setAttribute('id','para-1');
+    readButton.innerText = myLibrary[i].read;
+    
+    readButton.addEventListener('click', (e) => {
+        if (readButton.innerText === "yes") {
+            readButton.innerText = "no";
+        } else if (readButton.innerText === "no") {
+            readButton.innerText = "yes";
+        }
+    })
+    newCell4.appendChild(readButton);
+};
