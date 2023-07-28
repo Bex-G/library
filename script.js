@@ -1,18 +1,18 @@
 let myLibrary = [
-    {title: "Gideon the Ninth", author: 'Tamsyn Muir', read: "yes"},
-    {title: "Harrow the Ninth", author: 'Tamsyn Muir', read: "yes"},
-    {title: "Nona the Ninth", author: 'Tamsyn Muir', read: "yes"},
-    {title: "Alecto the Ninth", author: 'Tamsyn Muir', read: "no"},
+    {title: "Gideon the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
+    {title: "Harrow the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
+    {title: "Nona the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
+    {title: "Alecto the Ninth", author: 'Tamsyn Muir', readStatus: "not read"},
 ];
 
-function Book(title, author, read) {
+function Book(title, author, readStatus) {
     this.title = title;
     this.author = author;
-    this.read = read;
+    this.readStatus = readStatus;
 };
 
 function addToLibrary() {
-    let newBook = new Book(bookForm.title.value, bookForm.author.value, bookForm.read.value);
+    let newBook = new Book(bookForm.title.value, bookForm.author.value, bookForm.readStatus.value);
     myLibrary.push(newBook);
     addToTable();
 };
@@ -37,16 +37,16 @@ for (let i = 0; i < myLibrary.length; i++) {
 
     const readButton = document.createElement('button');
     readButton.setAttribute('id','readButton');
-    readButton.innerText = myLibrary[i].read;
+    readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
     readButton.addEventListener('click', (e) => {
-        if (readButton.innerText === "yes") {
-            readButton.innerText = "no";
-            readButton.setAttribute('class', 'no')
-        } else if (readButton.innerText === "no") {
-            readButton.innerText = "yes";
-            readButton.setAttribute('class', 'yes')
+        if (readButton.innerText === "read") {
+            readButton.innerText = "not read";
+            readButton.setAttribute('class', 'not-read')
+        } else if (readButton.innerText === "not read") {
+            readButton.innerText = "read";
+            readButton.setAttribute('class', 'read')
         }
     })
     newCell3.appendChild(readButton);
@@ -111,16 +111,16 @@ function addToTable() {
 
     const readButton = document.createElement('button');
     readButton.setAttribute('id','readButton');
-    readButton.innerText = myLibrary[i].read;
+    readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
     readButton.addEventListener('click', (e) => {
-        if (readButton.innerText === "yes") {
-            readButton.innerText = "no";
-            readButton.setAttribute('class', 'no')
-        } else if (readButton.innerText === "no") {
-            readButton.innerText = "yes";
-            readButton.setAttribute('class', 'yes')
+        if (readButton.innerText === "read") {
+            readButton.innerText = "not read";
+            readButton.setAttribute('class', 'not-read')
+        } else if (readButton.innerText === "not read") {
+            readButton.innerText = "read";
+            readButton.setAttribute('class', 'read')
         }
     })
     newCell3.appendChild(readButton);
