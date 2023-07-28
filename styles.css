@@ -2,14 +2,35 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
 
 .form-popup {
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
+}
 
+#tableContainer {
+    width: 65%;
+    display: grid;
+}
+
+#buttonContainer {
+    display: grid;
+    grid-column: 1 -1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 table th {
@@ -21,7 +42,25 @@ table th {
     border: solid rgba(0, 0, 0, 0.1) 1px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+.book-title, .book-author {
+    text-align: left;
+}
+
+.book-title {
+    width: 40%;
+}
+
+.book-author {
+    width: 30%;
+}
+
+.book-status, .book-remove {
+    text-align:center;
+    vertical-align: middle;
+    width: 15%;
+}
+
+#statusButton, #removeButton {
+    width: 50%;
+    padding: 5px;
 }

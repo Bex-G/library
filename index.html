@@ -9,7 +9,20 @@
     <script src="./script.js"defer></script>
 </head>
 <body>
-    <button id="newBook">New Book</button>
+    <div id="tableContainer">
+        <table id="bookTable">
+            <tr>
+                <th class="book-title">Title</th>
+                <th class="book-author">Author</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </table>
+        <div id="buttonContainer">
+            <button id="newBook">New Book</button>
+        </div>
+    </div>
+    
     <div class="form-popup" id="myForm">
         <form action="" method="get" id="formContainer" name="bookForm">
             
@@ -31,15 +44,5 @@
             <button id="cancelButton">cancel</button>
         </form>
     </div>
-    <table id="bookTable">
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </table>
-<body>
-    
 </body>
 </html>

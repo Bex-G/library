@@ -40,7 +40,7 @@ for (let i = 0; i < myLibrary.length; i++) {
     newCell3.setAttribute('class', 'book-status');
 
     const readButton = document.createElement('button');
-    readButton.setAttribute('id','readButton');
+    readButton.setAttribute('id','statusButton');
     readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
@@ -59,7 +59,7 @@ for (let i = 0; i < myLibrary.length; i++) {
     newCell4.setAttribute('class', 'book-remove');
 
     const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id','deleteButton');
+    deleteButton.setAttribute('id','removeButton');
     deleteButton.innerText = "remove";
     deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
@@ -119,7 +119,7 @@ function addToTable() {
     newCell3.setAttribute('class', 'book-status');
 
     const readButton = document.createElement('button');
-    readButton.setAttribute('id','readButton');
+    readButton.setAttribute('id','statusButton');
     readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
@@ -138,7 +138,7 @@ function addToTable() {
     newCell4.setAttribute('class', 'book-remove');
 
     const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id','deleteButton');
+    deleteButton.setAttribute('id','removeButton');
     deleteButton.innerText = "remove";
     deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
