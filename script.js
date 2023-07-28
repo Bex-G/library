@@ -24,23 +24,27 @@ const table = document.querySelector('#bookTable');
 for (let i = 0; i < myLibrary.length; i++) {
     newRow = table.insertRow();
     newRow.setAttribute('id', [i]);
+    newRow.setAttribute('class', 'row');
 
     let newCell1 = newRow.insertCell();
-    let newCell2 = newRow.insertCell();
-    let newCell3 = newRow.insertCell();
-
+    newCell1.setAttribute('class', 'book-title');
     let newText1 = document.createTextNode(myLibrary[i].title);
     newCell1.appendChild(newText1);
-
+    
+    let newCell2 = newRow.insertCell();
+    newCell2.setAttribute('class', 'book-author');
     let newText2 = document.createTextNode(myLibrary[i].author);
-        newCell2.appendChild(newText2);
+    newCell2.appendChild(newText2);
+    
+    let newCell3 = newRow.insertCell();
+    newCell3.setAttribute('class', 'book-status');
 
     const readButton = document.createElement('button');
     readButton.setAttribute('id','readButton');
     readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
-    readButton.addEventListener('click', (e) => {
+    readButton.addEventListener('click', () => {
         if (readButton.innerText === "read") {
             readButton.innerText = "not read";
             readButton.setAttribute('class', 'not-read')
@@ -52,15 +56,16 @@ for (let i = 0; i < myLibrary.length; i++) {
     newCell3.appendChild(readButton);
 
     let newCell4 = newRow.insertCell();
+    newCell4.setAttribute('class', 'book-remove');
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id','deleteButton');
     deleteButton.innerText = "remove";
-    deleteButton.addEventListener('click', (e) => {
+    deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
-    });
-newCell4.appendChild(deleteButton);
+        });
+    newCell4.appendChild(deleteButton);
 };
 
 // manage form visibility and actions
@@ -77,7 +82,7 @@ function clearForm() {
     document.getElementById("formContainer").reset();
 };
 
-document.getElementById('newBook').addEventListener('click', (e) => {
+document.getElementById('newBook').addEventListener('click', () => {
     openForm();
 });
 
@@ -98,23 +103,27 @@ function addToTable() {
 
     newRow = table.insertRow();
     newRow.setAttribute('id', [i]);
+    newRow.setAttribute('class', 'row');
 
     let newCell1 = newRow.insertCell();
-    let newCell2 = newRow.insertCell();
-    let newCell3 = newRow.insertCell();
-
+    newCell1.setAttribute('class', 'book-title');
     let newText1 = document.createTextNode(myLibrary[i].title);
     newCell1.appendChild(newText1);
-
+    
+    let newCell2 = newRow.insertCell();
+    newCell2.setAttribute('class', 'book-author');
     let newText2 = document.createTextNode(myLibrary[i].author);
-        newCell2.appendChild(newText2);
+    newCell2.appendChild(newText2);
+    
+    let newCell3 = newRow.insertCell();
+    newCell3.setAttribute('class', 'book-status');
 
     const readButton = document.createElement('button');
     readButton.setAttribute('id','readButton');
     readButton.innerText = myLibrary[i].readStatus;
     readButton.setAttribute('class', readButton.innerText);
 
-    readButton.addEventListener('click', (e) => {
+    readButton.addEventListener('click', () => {
         if (readButton.innerText === "read") {
             readButton.innerText = "not read";
             readButton.setAttribute('class', 'not-read')
@@ -126,14 +135,14 @@ function addToTable() {
     newCell3.appendChild(readButton);
 
     let newCell4 = newRow.insertCell();
+    newCell4.setAttribute('class', 'book-remove');
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id','deleteButton');
     deleteButton.innerText = "remove";
-    deleteButton.addEventListener('click', (e) => {
+    deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
-    });
-newCell4.appendChild(deleteButton);
+        });
+    newCell4.appendChild(deleteButton);
 };
-
