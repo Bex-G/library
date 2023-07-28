@@ -1,19 +1,18 @@
 let myLibrary = [
-    {title: "Gideon the Ninth", author: 'Tamsyn Muir', pages: 325, read: "yes"},
-    {title: "Harrow the Ninth", author: 'Tamsyn Muir', pages: 482, read: "yes"},
-    {title: "Nona the Ninth", author: 'Tamsyn Muir', pages: 512, read: "yes"},
-    {title: "Alecto the Ninth", author: 'Tamsyn Muir', pages: 681, read: "no"},
+    {title: "Gideon the Ninth", author: 'Tamsyn Muir', read: "yes"},
+    {title: "Harrow the Ninth", author: 'Tamsyn Muir', read: "yes"},
+    {title: "Nona the Ninth", author: 'Tamsyn Muir', read: "yes"},
+    {title: "Alecto the Ninth", author: 'Tamsyn Muir', read: "no"},
 ];
 
-function Book(title, author, pages, read) {
+function Book(title, author, read) {
     this.title = title;
     this.author = author;
-    this.pages = pages;
     this.read = read;
 };
 
 function addToLibrary() {
-    let newBook = new Book(bookForm.title.value, bookForm.author.value, bookForm.pages.value, bookForm.read.value);
+    let newBook = new Book(bookForm.title.value, bookForm.author.value, bookForm.read.value);
     myLibrary.push(newBook);
     addToTable();
 };
@@ -29,7 +28,6 @@ for (let i = 0; i < myLibrary.length; i++) {
     let newCell1 = newRow.insertCell();
     let newCell2 = newRow.insertCell();
     let newCell3 = newRow.insertCell();
-    let newCell4 = newRow.insertCell();
 
     let newText1 = document.createTextNode(myLibrary[i].title);
     newCell1.appendChild(newText1);
@@ -37,26 +35,23 @@ for (let i = 0; i < myLibrary.length; i++) {
     let newText2 = document.createTextNode(myLibrary[i].author);
         newCell2.appendChild(newText2);
 
-    let newText3 = document.createTextNode(myLibrary[i].pages);
-        newCell3.appendChild(newText3);
+    const readButton = document.createElement('button');
+    readButton.setAttribute('id','readButton');
+    readButton.innerText = myLibrary[i].read;
+    readButton.setAttribute('class', readButton.innerText);
 
-        const readButton = document.createElement('button');
-        readButton.setAttribute('id','readButton');
-        readButton.innerText = myLibrary[i].read;
-        readButton.setAttribute('class', readButton.innerText);
+    readButton.addEventListener('click', (e) => {
+        if (readButton.innerText === "yes") {
+            readButton.innerText = "no";
+            readButton.setAttribute('class', 'no')
+        } else if (readButton.innerText === "no") {
+            readButton.innerText = "yes";
+            readButton.setAttribute('class', 'yes')
+        }
+    })
+    newCell3.appendChild(readButton);
 
-        readButton.addEventListener('click', (e) => {
-            if (readButton.innerText === "yes") {
-                readButton.innerText = "no";
-                readButton.setAttribute('class', 'no')
-            } else if (readButton.innerText === "no") {
-                readButton.innerText = "yes";
-                readButton.setAttribute('class', 'yes')
-            }
-        })
-        newCell4.appendChild(readButton);
-
-    let newCell5 = newRow.insertCell();
+    let newCell4 = newRow.insertCell();
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id','deleteButton');
@@ -65,7 +60,7 @@ for (let i = 0; i < myLibrary.length; i++) {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
     });
-newCell5.appendChild(deleteButton);
+newCell4.appendChild(deleteButton);
 };
 
 // manage form visibility and actions
@@ -107,16 +102,12 @@ function addToTable() {
     let newCell1 = newRow.insertCell();
     let newCell2 = newRow.insertCell();
     let newCell3 = newRow.insertCell();
-    let newCell4 = newRow.insertCell();
 
     let newText1 = document.createTextNode(myLibrary[i].title);
     newCell1.appendChild(newText1);
 
     let newText2 = document.createTextNode(myLibrary[i].author);
         newCell2.appendChild(newText2);
-
-    let newText3 = document.createTextNode(myLibrary[i].pages);
-        newCell3.appendChild(newText3);
 
     const readButton = document.createElement('button');
     readButton.setAttribute('id','readButton');
@@ -126,15 +117,15 @@ function addToTable() {
     readButton.addEventListener('click', (e) => {
         if (readButton.innerText === "yes") {
             readButton.innerText = "no";
-            readButton.setAttribute('class', 'no');
+            readButton.setAttribute('class', 'no')
         } else if (readButton.innerText === "no") {
             readButton.innerText = "yes";
-            readButton.setAttribute('class', 'yes');
+            readButton.setAttribute('class', 'yes')
         }
     })
-    newCell4.appendChild(readButton);
+    newCell3.appendChild(readButton);
 
-    let newCell5 = newRow.insertCell();
+    let newCell4 = newRow.insertCell();
 
     const deleteButton = document.createElement('button');
     deleteButton.setAttribute('id','deleteButton');
@@ -143,6 +134,6 @@ function addToTable() {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
     });
-newCell5.appendChild(deleteButton);
+newCell4.appendChild(deleteButton);
 };
 
