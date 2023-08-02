@@ -2,17 +2,26 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    display: block;
+    display: grid;
+    justify-items: center;
+}
+
+#parentContainer {
+    width: 80%;
+}
+
+.header h1 {
+    color: #24a0ed;
+    font-weight: lighter;
+    margin: 50px 0px 25px;
 }
 
 #tableContainer {
-    width: 65%;
-    display: grid;
-    margin: auto;
+    width: 100%;
 }
 
 table {
@@ -51,19 +60,25 @@ table th {
 #statusButton, #deleteButton {
     width: 50%;
     padding: 5px;
-    border: none;
     border-radius: 5%;
+}
+
+#statusButton {
+    background-color: white;
+    border: solid rgba(0, 0, 0, 0.1) 1px;
 }
 
 #deleteButton {
     background-color: rgba(255, 0, 0, 0.7);
     color: white;
+    border: none;
 }
 
-#buttonContainer {
-    display: grid;
-    grid-column: 1 -1;
+#newButton {
+    width: 100%;
+    border: none;
     border-radius: 5%;
+    padding: 2px;
 }
 
 /* formContainer changes to display: flex when opened via button event */
@@ -74,10 +89,6 @@ table th {
 
 #formContainer {
     justify-content: center;
-}
-
-#myForm {
-    width: 35%;
 }
 
 label {
@@ -110,5 +121,5 @@ input[type=radio] {
     margin-left: 15px;
     margin-right: 10px;
     color: white;
-    background-color: rgba(0, 128, 0, 0.7);
+    background-color: #24a0ed;
 }

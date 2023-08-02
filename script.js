@@ -94,6 +94,7 @@ document.getElementById('submitButton').addEventListener('click', (e) => {
 
 document.getElementById('cancelButton').addEventListener('click', (e) => {
     e.preventDefault();
+    clearForm();
     closeForm();
 });
 
