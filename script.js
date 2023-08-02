@@ -42,25 +42,22 @@ for (let i = 0; i < myLibrary.length; i++) {
     const readButton = document.createElement('button');
     readButton.setAttribute('id','statusButton');
     readButton.innerText = myLibrary[i].readStatus;
-    readButton.setAttribute('class', readButton.innerText);
 
     readButton.addEventListener('click', () => {
         if (readButton.innerText === "read") {
             readButton.innerText = "not read";
-            readButton.setAttribute('class', 'not-read')
         } else if (readButton.innerText === "not read") {
             readButton.innerText = "read";
-            readButton.setAttribute('class', 'read')
         }
     })
     newCell3.appendChild(readButton);
 
     let newCell4 = newRow.insertCell();
-    newCell4.setAttribute('class', 'book-remove');
+    newCell4.setAttribute('class', 'book-delete');
 
     const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id','removeButton');
-    deleteButton.innerText = "remove";
+    deleteButton.setAttribute('id','deleteButton');
+    deleteButton.innerText = "delete";
     deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
@@ -71,18 +68,20 @@ for (let i = 0; i < myLibrary.length; i++) {
 // manage form visibility and actions
 
 function openForm() {
-    document.getElementById("myForm").style.display = "block";
+    document.getElementById('formContainer').style.display = "flex";
+    document.getElementById('newButton').style.display = "none";
 };
 
 function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+    document.getElementById("formContainer").style.display = "none";
+    document.getElementById('newButton').style.display = "block";
 };
 
 function clearForm() {
-    document.getElementById("formContainer").reset();
+    document.getElementById("myForm").reset();
 };
 
-document.getElementById('newBook').addEventListener('click', () => {
+document.getElementById('newButton').addEventListener('click', () => {
     openForm();
 });
 
@@ -90,6 +89,11 @@ document.getElementById('submitButton').addEventListener('click', (e) => {
     e.preventDefault();
     addToLibrary();
     clearForm();
+    closeForm();
+});
+
+document.getElementById('cancelButton').addEventListener('click', (e) => {
+    e.preventDefault();
     closeForm();
 });
 
@@ -121,25 +125,22 @@ function addToTable() {
     const readButton = document.createElement('button');
     readButton.setAttribute('id','statusButton');
     readButton.innerText = myLibrary[i].readStatus;
-    readButton.setAttribute('class', readButton.innerText);
 
     readButton.addEventListener('click', () => {
         if (readButton.innerText === "read") {
             readButton.innerText = "not read";
-            readButton.setAttribute('class', 'not-read')
         } else if (readButton.innerText === "not read") {
             readButton.innerText = "read";
-            readButton.setAttribute('class', 'read')
         }
     })
     newCell3.appendChild(readButton);
 
     let newCell4 = newRow.insertCell();
-    newCell4.setAttribute('class', 'book-remove');
+    newCell4.setAttribute('class', 'book-delete');
 
     const deleteButton = document.createElement('button');
-    deleteButton.setAttribute('id','removeButton');
-    deleteButton.innerText = "remove";
+    deleteButton.setAttribute('id','deleteButton');
+    deleteButton.innerText = "delete";
     deleteButton.addEventListener('click', () => {
         document.getElementById([i]).remove();
         myLibrary.splice(i, 1)
