@@ -1,14 +1,16 @@
-let myLibrary = [
+myLibrary = [
     {title: "Gideon the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
     {title: "Harrow the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
     {title: "Nona the Ninth", author: 'Tamsyn Muir', readStatus: "read"},
     {title: "Alecto the Ninth", author: 'Tamsyn Muir', readStatus: "not read"},
 ];
 
-function Book(title, author, readStatus) {
+class Book {
+    constructor (title, author, readStatus) {
     this.title = title;
     this.author = author;
     this.readStatus = readStatus;
+    };
 };
 
 function addToLibrary() {
