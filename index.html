@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="./script.js"defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
     <div id="parentContainer">
-    <div class="header">
+      <div class="header">
         <h1>My Library</h1>
-    </div>
-    <div id="tableContainer">
+      </div>
+      <div id="tableContainer">
         <table id="bookTable">
-            <tr>
-                <th class="book-title">Title</th>
-                <th class="book-author">Author</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
+          <tr>
+            <th class="book-title">Title</th>
+            <th class="book-author">Author</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
         </table>
         <button id="newButton">+</button>
+      </div>
     </div>
-    </div>
-    
+
     <div class="form-popup" id="formContainer">
-        <form action="" method="get" id="myForm" name="bookForm">
-            
-            <label for="title">Title</label>
-            <input type="text" name="title" required>
+      <form action="" method="get" id="myForm" name="bookForm">
+        <label for="title">*Title</label>
+        <input type="text" id="title" name="title" required />
 
-            <label for="author">Author</label>
-            <input type="text" name="author">
+        <label for="author">*Author</label>
+        <input type="text" id="author" name="author" required />
 
-            <div class="form-buttons">
-                <label for="readStatus">Have you read this book?</label>
-                <input type="radio" value="read" name="readStatus">
-                <label for="read">yes</label>
-                <input type="radio" value="not read" name="readStatus" checked>
-                <label for="not read">no</label>
+        <div class="form-buttons">
+          <fieldset>
+            <legend>Have you read this book?</legend>
+            <label for="read">yes</label>
+            <input type="radio" id="read" value="read" name="readStatus" />
+            <label for="notRead">no</label>
+            <input
+              type="radio"
+              id="notRead"
+              value="not read"
+              name="readStatus"
+              checked
+            />
+          </fieldset>
 
-                <button type="submit" id="submitButton">add book</button>
-                <button id="cancelButton">cancel</button>
-            </div>
-        </form>
+          <input type="submit" value="add book" />
+          <button id="cancelButton">cancel</button>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>

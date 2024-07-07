@@ -1,125 +1,136 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family:Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-    display: grid;
-    justify-items: center;
+  display: grid;
+  justify-items: center;
 }
 
 #parentContainer {
-    width: 80%;
+  width: 80%;
 }
 
 .header h1 {
-    color: #24a0ed;
-    font-weight: lighter;
-    margin: 50px 0px 25px;
+  color: #24a0ed;
+  font-weight: lighter;
+  margin: 50px 0px 25px;
 }
 
 #tableContainer {
-    width: 100%;
+  width: 100%;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 table th {
-    height: 50px;
+  height: 50px;
 }
 
 .row {
-    height: 50px;
-    border-top: solid rgba(0, 0, 0, 0.1) 1px;
+  height: 50px;
+  border-top: solid rgba(0, 0, 0, 0.1) 1px;
 }
 
-.book-title, .book-author {
-    text-align: left;
-    padding-left: 5px;
+.book-title,
+.book-author {
+  text-align: left;
+  padding-left: 5px;
 }
 
 .book-title {
-    width: 40%;
+  width: 40%;
 }
 
 .book-author {
-    width: 30%;
+  width: 30%;
 }
 
-.book-status, .book-delete {
-    text-align:center;
-    vertical-align: middle;
-    width: 15%;
+.book-status,
+.book-delete {
+  text-align: center;
+  vertical-align: middle;
+  width: 15%;
 }
 
-#statusButton, #deleteButton {
-    width: 50%;
-    padding: 5px;
-    border-radius: 5%;
+#statusButton,
+#deleteButton {
+  width: 50%;
+  padding: 5px;
+  border-radius: 5%;
+  min-width: min-content;
 }
 
 #statusButton {
-    background-color: white;
-    border: solid rgba(0, 0, 0, 0.1) 1px;
+  background-color: white;
+  border: solid rgba(0, 0, 0, 0.1) 1px;
 }
 
 #deleteButton {
-    background-color: rgba(255, 0, 0, 0.7);
-    color: white;
-    border: none;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
 }
 
 #newButton {
-    width: 100%;
-    border: none;
-    border-radius: 5%;
-    padding: 2px;
+  width: 100%;
+  border: none;
+  border-radius: 5%;
+  padding: 2px;
 }
 
 /* formContainer changes to display: flex when opened via button event */
 
 .form-popup {
-    display: none;
+  display: none;
 }
 
 #formContainer {
-    justify-content: center;
+  justify-content: center;
 }
 
-label {
-    font-size: .8rem;
-    font-weight: lighter;
+label,
+legend {
+  font-size: 0.8rem;
+  font-weight: lighter;
 }
 
-input[type=text] {
-    width: 100%;
-    margin: 5px 0px;
-    padding: 5px;
+input[type="text"] {
+  width: 100%;
+  margin: 5px 0px;
+  padding: 5px;
 }
 
-input[type=radio] {
-    margin-top: 10px;
+input[type="radio"] {
+  margin-top: 10px;
 }
 
 .form-buttons {
-    text-align: center;
+  text-align: center;
 }
 
-#submitButton, #cancelButton {
-    display: inline-block;
-    padding: 5px;
-    border: none;
-    border-radius: 5%;
+fieldset {
+  padding-bottom: 5px;
 }
 
-#submitButton {
-    margin-left: 15px;
-    margin-right: 10px;
-    color: white;
-    background-color: #24a0ed;
+input[type="submit"],
+#cancelButton {
+  display: inline-block;
+  padding: 5px;
+  border: none;
+  border-radius: 5%;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  margin-left: 15px;
+  margin-right: 10px;
+  color: white;
+  background-color: #24a0ed;
 }
